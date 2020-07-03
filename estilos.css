@@ -1,0 +1,326 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    /*font-style: italic;*/
+}
+
+h1{
+    font-size: 40px;
+    line-height: 1.5;
+    letter-spacing: -.2px;
+    color: white;
+    margin: 0;
+    margin-bottom: 75px;
+}
+h1 strong{
+    color:#026fff;
+}
+
+h2{
+    color:#026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.hero{
+    height: 300px;
+    background-color: #1b2127;
+    background-position-x: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-image{
+    object-fit: cover;
+}
+
+
+.portfolio{
+    background: #fafafa;
+    padding: 20px;
+}
+
+.project{
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-course,
+.project-date,
+.project-url{
+    margin: 32px 0;
+    font-size: 15px;
+}
+
+.project-date small{
+    font-size: 15px;
+}
+
+.project-url small{
+    font-size: 15px;
+}
+
+
+.project-date,
+.project-url strong{
+    font-weight: bold;
+}
+
+
+.project-description{
+    font-size: 20px;
+}
+
+.project strong{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title{
+    font-size: 30px;
+    margin-top:0;
+    margin-bottom: 50px;
+}
+
+.project-details{
+    width: 500px;
+    margin: 0 0 30px;
+}
+
+.project-imageContainer{
+    width: 500px;
+}
+
+.header{
+    background-color:#1b2127;
+    color: white; 
+    display: flex;  
+    justify-content: space-between;
+    height: 85px;
+    border-bottom: 2px solid white;
+    align-items: center;
+}
+
+.menu{
+    height: inherit;
+}
+
+ol,
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure{
+    margin: 0;
+}
+
+.header ol{
+    display: flex;
+    height: inherit;
+}
+
+.header ol li{
+    height: inherit;
+}
+
+
+.header a{
+    color: white;
+    text-decoration: none;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0 23px;
+    font-size: 20px;
+}
+
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+    flex-shrink: 0;
+}
+
+.logo{
+    margin-top: 9px;
+    margin-left: 12px;
+    margin-bottom: 9px;
+}
+
+.footer{
+    border-top: 2px solid white;
+    text-decoration: none;
+    color: white;
+    background-color: #1b2127;
+    height: 85x;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #03b1fc;
+}
+
+.footer p{
+    margin-right: 7px;
+    margin-left: 5px;
+}
+
+
+.footer img{
+    vertical-align: middle;
+}
+
+
+.experience-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experience-list-title{
+    margin-left: 20px;
+}
+
+.experience{
+    border: 2px solid #1b2127;
+    border-radius: 10px;
+    margin: 43px;
+    width: 480px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #ffffff;
+}
+
+.experience img{
+    width: 130px;
+    height: 130px;
+    margin-left: 170px;
+    margin-top: 10px;
+}
+
+.experience-detail{
+    margin: 20px;
+    margin-top: 0px;
+    background-color: white;
+    padding: 7px;
+    position: relative;
+    text-align: center;
+}
+
+.experience-description{
+    text-align: left;
+    margin-left: 7px;
+}
+
+.experience-url{
+    border: 1px solid #056fff;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #056fff;
+    border-radius: 5px;
+}
+
+.contact{
+    border-top: 2px solid white;
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-link{
+    display: inline-block;
+    margin: 0 10px;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+}
+
+.social-link.twitter{
+    background-image: url('../Pagina web/Imagenes website/icons8-twitter-48.png');
+}
+
+.social-link.linkedin{
+    background-image: url('../Pagina web/Imagenes website/icons8-linkedin-52.png');
+}
+
+.social-link.github{
+    background-image: url('../Pagina web/Imagenes website/icons8-github-48.png');
+}
+
+.social-link.instagram{
+    background-image: url('../Pagina web/Imagenes website/icons8-instagram-48.png');
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 20px 10px 25px;
+    background-image: url('../Pagina web/Imagenes website/icons8-comentarios-50.png');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+    width: 222px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    width: 100px;
+    margin-bottom: 7px;
+}
+
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.container{
+    width: 1150px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+}
