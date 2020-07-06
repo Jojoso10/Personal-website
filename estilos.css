@@ -15,12 +15,14 @@ h6{
 }
 
 h1{
-    font-size: 40px;
+    font-size: 35px;
+    line-height: 1.5;                                                                                 
     line-height: 1.5;
     letter-spacing: -.2px;
     color: white;
     margin: 0;
-    margin-bottom: 75px;
+    margin-bottom: 8px;
+    margin-left: 22px;
 }
 h1 strong{
     color:#026fff;
@@ -32,7 +34,8 @@ h2{
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .hero{
@@ -42,6 +45,7 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* flex-wrap: wrap; */ /*Evitar scroll horizontal*/ /* Las propiedades se heredan a los hijos (container)*/
 }
 
 .hero-image{
@@ -63,6 +67,7 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Las imagenes caen y se ubican debajo del texto*/
 }
 
 .project-course,
@@ -102,13 +107,19 @@ h2{
 }
 
 .project-details{
-    width: 500px;
-    margin: 0 0 30px;
+    width: 50%;
+    margin: 0 0 10px;
+
 }
 
 .project-imageContainer{
-    width: 500px;
+    width: 50%;
 }
+
+.project-imageContainer img{
+    max-width: 100%; /* La imagen ocupara el 100% del espacio que tenga disponible, no hay necesidad de tocar el html original*/
+}
+
 
 .header{
     background-color:#1b2127;
@@ -118,6 +129,7 @@ h2{
     height: 85px;
     border-bottom: 2px solid white;
     align-items: center;
+    flex-wrap: wrap; /*Evitar scroll horizontal*/
 }
 
 .menu{
@@ -183,6 +195,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer a{
@@ -213,18 +226,20 @@ figure{
 .experience{
     border: 2px solid #1b2127;
     border-radius: 10px;
-    margin: 43px;
-    width: 480px;
+    margin: 0.8%;
+    width: 46%;
     overflow: hidden;
     flex-shrink: 0;
     background: #ffffff;
+    margin-left: 2%;
 }
 
 .experience img{
     width: 130px;
     height: 130px;
-    margin-left: 170px;
-    margin-top: 10px;
+    margin-left: 33%;
+    margin-right: 36%;
+    margin-top: 2%;
 }
 
 .experience-detail{
@@ -238,7 +253,6 @@ figure{
 
 .experience-description{
     text-align: left;
-    margin-left: 7px;
 }
 
 .experience-url{
@@ -257,6 +271,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Caen las redes sociales*/
 }
 
 .social-link{
@@ -301,7 +316,7 @@ figure{
     margin-top: 10px;
     background: transparent;
     color: white;
-    padding: 10px 0;
+    padding: 8px 0;
     border-radius: 5px;
     border-color: white;
     border-style: solid;
@@ -316,11 +331,197 @@ figure{
 
 
 .container{
-    width: 1150px;
+    max-width: 1024px;/* Lo maximo que recibe*/
+    flex: 1; /* Le indicamos que ocupe todo el ancho del elemento que pueda*/
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
+}
+
+.video-container{
+    resize: auto;
+}
+
+.html-video{
+    max-width: 100%;
+    margin-top: 1%;
+    height: auto;
+}
+
+.youtube-video{ 
+        position: absolute;/* Posición absoluta para posicionarse en flexible-video. */
+        top: 0;/* Estira el video a cada esquina. */
+        bottom: 0;/* Estira el video a cada esquina. */
+        right: 0%;/* Estira el video a cada esquina. */
+        left: 10%;/* Estira el video a cada esquina. */
+        width: 100%;/* Ocupar todo el espacio en horizontal. */
+        height: 100%;/* Ocupar todo el espacio en vertical. */
+        z-index: 3;    /* Indica que irá al frente de los elementos definidos por z-index 2 y 3. */
+}
+
+.flexible-video{
+    margin-top: 3%;
+    width: 85%;/* Porcentaje que se desea ocupar en el contenedor padre. */
+    height: 0;/* Altura 0, pues esta se establecerá por padding. */
+    padding-top: 40.25%;/* Pd-t=Porcentaje/100*height*100/width*/ /* El calculo daba 56 pero me parecio mucho */
+    position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
+}
+/* Desktop first --------> Empezamos con el MediaQuerie mas grande*/
+
+@media screen and (max-width: 1024px){
+    
+}
+
+
+
+@media screen and (max-width: 767px){
+
+    .header{
+        flex-wrap: wrap;
+    }
+
+    .hero{
+        flex-wrap: wrap;
+        height: auto;
+        position: relative; /* El encabezado delante de la imagen*/
+        overflow: hidden;
+    }
+
+    h1{
+        position: relative; /* El texto delante de la imagen*/
+        text-shadow: 1px 1px 2px #000;
+       font-size: 1.9em;
+       z-index: 2; /* El texto delante de la imagen*/
+       margin-bottom: 34%;
+    }
+
+    .hero-image{
+        position: absolute; /*Posicion fija*/ /* Absolute+overflow:hidden  O  position: static + max-width: 100%;*/
+        max-width: 100%; /* Se adapta perfecta la imagen al hero donde esta contenida*/
+        width: auto;
+        z-index: 1; /* Fija la imagen detras del texto*/
+        left:0;
+        right:0;
+        top:0;
+        bottom: 0;
+    }
+
+    .header{
+        display: block; /* display original de los elementos, se caen*/
+        height: auto;
+    }
+    .header ol{
+        display: block; /* Puedo usar initial ya que la misma era block*/
+    }
+    .header ol li{
+        height: 50px; /* Aumentamos el espacio para que se vean los elementos*/
+    }
+    .header a{
+        justify-content: center; /* Centramos los elementos*/
+    }
+    .header .logo{
+        text-align: center; /* centramos la imagen*/
+    }
+
+    .project{
+        display: block;
+    }
+    .project-imageContainer{
+        width: auto; /* Auto ya que previamente definimos que la imagen ocupe el 100% del contenido disponible*/
+        text-align: center;
+    }
+    .project-details{
+        width: auto;
+        font-size: 16px;
+    }
+
+    .project-course,.project-date,.project-url{
+        margin: .8em 0; /* 16px=1em*/
+    }
+
+    .project-title{
+        font-size: 1.7em;
+        margin-bottom: .8em;
+    }
+    .project-url{
+        font-size: 1em;
+    }
+    .project-course{
+        font-size: 1.1em;
+    }
+    .project-date{
+        font-size: 1em;
+    }
+    .project-description{
+        font-size: 1em;
+    }
+    .event{
+        width: auto;
+        flex-shrink: initial; /* Evitamos el scroll horizontal*/
+    }
+    .container{
+        display: initial;
+        text-align: -webkit-center;
+    }
+    .experience{
+        width: 80%;
+        margin: 2%;
+    }
+    .experience img{
+        margin-left: 33%;
+    }
+    .experience-detail{
+        width: auto;
+        font-size: 16px;
+    }
+    .experience-title{
+        font-size: 1.3em;
+    }
+    .experience-description{
+        font-size: 1em;
+    }
+    .contact{
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+    .form-email button{
+        margin: .5em;
+    }
+    .form-email h3{
+        margin-top: 0;
+    }
+    }
+
+@media screen and (max-width: 480px){
+
+    .header a{
+        font-size: 1.1em;
+    }
+
+    h1{
+        font-size: 1.3em;
+        margin-bottom: 27%;
+    }
+    .experience-detail{
+        width: auto;
+        font-size: 16px;
+    }
+    .experience-title{
+        font-size: 1.3em;
+    }
+    .experience-description{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 320px){
+    h1 {
+        margin-bottom: 15%;
+    }
+   
 }
