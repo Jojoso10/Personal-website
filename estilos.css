@@ -1,3 +1,39 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('/fonts/icomoon.eot?1d5rin');
+    src:  url('/fonts/icomoon.eot?1d5rin#iefix') format('embedded-opentype'),
+      url('/fonts/icomoon.ttf?1d5rin') format('truetype'),
+      url('/fonts/icomoon.woff?1d5rin') format('woff'),
+      url('/fonts/icomoon.svg?1d5rin#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e900";
+  }
+  
+
+  /* Añadi styles.css del Icommon para poder cargar la fuente que sostiene a los iconos*/
+
+
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -181,8 +217,8 @@ figure{
 }
 
 .logo{
-    margin-top: 9px;
-    margin-left: 12px;
+    margin-top: 9px; 
+    margin-left: 8px;
     margin-bottom: 9px;
 }
 
@@ -247,9 +283,10 @@ figure{
     margin-top: 0px;
     background-color: white;
     padding: 7px;
-    position: relative;
+    position: static; /* Lo cambie de relative a static por el menu hamburguesa*/
     text-align: center;
 }
+
 
 .experience-description{
     text-align: left;
@@ -283,19 +320,19 @@ figure{
 }
 
 .social-link.twitter{
-    background-image: url('../Pagina web/Imagenes website/icons8-twitter-48.png');
+    background-image: url('/Imagenes website/icons8-twitter-48.png');
 }
 
 .social-link.linkedin{
-    background-image: url('../Pagina web/Imagenes website/icons8-linkedin-52.png');
+    background-image: url('/Imagenes website/icons8-linkedin-52.png');
 }
 
 .social-link.github{
-    background-image: url('../Pagina web/Imagenes website/icons8-github-48.png');
+    background-image: url('/Imagenes website/icons8-github-48.png');
 }
 
 .social-link.instagram{
-    background-image: url('../Pagina web/Imagenes website/icons8-instagram-48.png');
+    background-image: url('/Imagenes website/icons8-instagram-48.png');
 }
 
 .form-email input{
@@ -303,7 +340,7 @@ figure{
     border-style: solid;
     border-radius: 5px;
     padding: 10px 20px 10px 25px;
-    background-image: url('../Pagina web/Imagenes website/icons8-comentarios-50.png');
+    background-image: url('/Imagenes website/icons8-comentarios-50.png');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -368,16 +405,44 @@ figure{
     height: 0;/* Altura 0, pues esta se establecerá por padding. */
     padding-top: 40.25%;/* Pd-t=Porcentaje/100*height*100/width*/ /* El calculo daba 56 pero me parecio mucho */
     position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
+
 }
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+    /*
+    Display: flex;
+    align-items: center;
+    justify-content: center;
+            CENTRA EL BOTON
+    */
+    line-height: 40px; /* Centrado vertical*/ /* Misma medida que el boton*/
+    text-align: center; /* Centrado horizontal*/
+    position: fixed; /* El boton te sigue*/
+    z-index: 4; /* La imagen del hero era z-index:3, con esto el boton ya pasa por arriba de todos los elementos*/
+    color: white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
 /* Desktop first --------> Empezamos con el MediaQuerie mas grande*/
 
 @media screen and (max-width: 1024px){
     
 }
-
-
-
 @media screen and (max-width: 767px){
+
+    .logo{
+        margin-top: 0; /* Me general un espacio en blanco arriba del boton */
+    }
+
+    .burger-button{
+        display: block; /* Con esto el width height y background toman los valores que yo les doy*/
+    }
 
     .header{
         flex-wrap: wrap;
@@ -388,6 +453,14 @@ figure{
         height: auto;
         position: relative; /* El encabezado delante de la imagen*/
         overflow: hidden;
+    }
+
+    .hero.desaparece{
+        display: none;  /* Hace desaparecer el hero cuando se activa el menu*/
+    }
+
+    .flexible-video.desaparece{
+        display: none;    /* Hace desaparecer el video cuando se activa el menu*/
     }
 
     h1{
@@ -421,11 +494,32 @@ figure{
     }
     .header a{
         justify-content: center; /* Centramos los elementos*/
+        height: 40px;
+        font-size: 1.2em;
+        text-decoration: underline;
+        margin-bottom: .2em;
     }
     .header .logo{
         text-align: center; /* centramos la imagen*/
     }
 
+    .menu{
+        position: fixed; /* Tanto el boton como los elementos(exp,portaf) ahora te acompañan */
+        background-color:rgba(5,111,255,.9); /* La opacidad me permite ver detras del menu *^/
+        z-index:3; /* Mismo nivel que la foto del hero pero abajo del boton*/
+        top: 0; /* Me los llevo a la esquina donde esta el boton*/
+        /* left: 0 */;/* Me los llevo a la esquina donde esta el boton*/
+        width: 100vw;
+        height: 100vh;   /* Ocupa todo el ancho visual */
+        bottom: 0; /*^El height del ol es inherit y con esto se estira sin necesidad de cambiar el inherit */
+        align-items: center;
+        justify-content: center;
+        left: -100vw; /* Esconde el menu */
+        transition: .3s;
+    }
+    .menu.is-active{
+        left: 0;
+    }
     .project{
         display: block;
     }
@@ -477,6 +571,7 @@ figure{
         width: auto;
         font-size: 16px;
     }
+
     .experience-title{
         font-size: 1.3em;
     }
