@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:  url('/fonts/icomoon.eot?1d5rin');
-    src:  url('/fonts/icomoon.eot?1d5rin#iefix') format('embedded-opentype'),
-      url('/fonts/icomoon.ttf?1d5rin') format('truetype'),
-      url('/fonts/icomoon.woff?1d5rin') format('woff'),
-      url('/fonts/icomoon.svg?1d5rin#icomoon') format('svg');
+    src:  url('fonts/icomoon.eot?1d5rin');
+    src:  url('fonts/icomoon.eot?1d5rin#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?1d5rin') format('truetype'),
+      url('fonts/icomoon.woff?1d5rin') format('woff'),
+      url('fonts/icomoon.svg?1d5rin#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -13,7 +13,7 @@
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: never;
+    /* speak: never; */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -320,19 +320,19 @@ figure{
 }
 
 .social-link.twitter{
-    background-image: url('/Imagenes website/icons8-twitter-48.png');
+    background-image: url('Imagenes website/icons8-twitter-48.png');
 }
 
 .social-link.linkedin{
-    background-image: url('/Imagenes website/icons8-linkedin-52.png');
+    background-image: url('Imagenes website/icons8-linkedin-52.png');
 }
 
 .social-link.github{
-    background-image: url('/Imagenes website/icons8-github-48.png');
+    background-image: url('Imagenes website/icons8-github-48.png');
 }
 
 .social-link.instagram{
-    background-image: url('/Imagenes website/icons8-instagram-48.png');
+    background-image: url('Imagenes website/icons8-instagram-48.png');
 }
 
 .form-email input{
@@ -340,7 +340,7 @@ figure{
     border-style: solid;
     border-radius: 5px;
     padding: 10px 20px 10px 25px;
-    background-image: url('/Imagenes website/icons8-comentarios-50.png');
+    background-image: url('Imagenes website/icons8-comentarios-50.png');
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position-y: center;
